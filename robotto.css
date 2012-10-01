@@ -1,0 +1,25 @@
+/*div { zoom: 1.5; -moz-transform: scale(1.5); -webkit-transform: scale(1.5); }*/
+
+div { border-radius: 3px; }
+
+#arena {}
+
+#robot {
+    position: absolute;
+    width: 25px; height: 25px;
+    margin: 60px;
+    border: 2px solid #90ee90;
+    border-radius: 10px;
+    background-color: green;
+    box-shadow: 1px 1px darkgrey;
+}
+
+#robot.down { border-bottom-color: #f08080; }
+
+.wall {
+    position: absolute;
+    width: 50px; height: 50px;
+    margin: 50px;
+    background-color: lightgrey;
+    box-shadow: 5px 5px darkgrey;
+}

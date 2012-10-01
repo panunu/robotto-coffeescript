@@ -1,0 +1,2 @@
+class @SillyBrain extends AbstractBrain
+
