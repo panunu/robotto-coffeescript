@@ -4,8 +4,11 @@
     <title>Robotto</title>
     <link rel="stylesheet" type="text/css" href="robotto.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script type="text/javascript" src="/src/robot.js"></script>
-    <script type="text/javascript" src="/src/silly-brain.js"></script>
+    <script type="text/javascript" src="/js/robot.js"></script>
+    <script type="text/javascript" src="/js/map.js"></script>
+    <script type="text/javascript" src="/js/abstract-brain.js"></script>
+    <script type="text/javascript" src="/js/silly-brain.js"></script>
+    <script type="text/javascript" src="/js/simulation.js"></script>
 </head>
 <body>
 
@@ -14,7 +17,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            var simulation = new Simulation(new Map(), new SillyBrain('I am a simple brain with a simple needs.'));
+            var simulation = new Simulation(new Map(), new SillyBrain('I am a simple brain with simple needs.'));
             simulation.buildMap();
         });
     </script>
