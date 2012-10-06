@@ -34,10 +34,10 @@ class Robot
       when left then @x--
       when right then @x++
 
-    if @map.getPresentation()[@y][@x] == 1
+    if @map.getPresentation()[@y][@x] == 1 # TODO: Remove magic
       @y = original.y
       @x = original.x
-      return false
+      false
     else true
 
   see: ->

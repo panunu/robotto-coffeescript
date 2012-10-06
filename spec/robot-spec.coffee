@@ -8,14 +8,12 @@ describe 'Robot', ->
 
   beforeEach ->
     robot = new Robot(1, 1, 0)
-    map = new Map()
-    map.setPresentation([
+    robot.setMap new Map().setPresentation([
       [0, 0, 0, 0]
       [0, 0, 0, 0]
       [0, 0, 0, 0]
       [0, 0, 0, 0]
     ])
-    robot.setMap map
 
   it 'should have x and y', ->
     robot = new Robot(1, 2, 0)
@@ -63,9 +61,7 @@ describe 'Robot', ->
 
   it 'should not move forward if there is a wall', ->
     robot = new Robot(0, 0, 90)
-    map = new Map()
-    map.setPresentation([[0, 1]])
-    robot.setMap map
+    robot.setMap new Map().setPresentation([[0, 1]])
 
     expect(robot.goForward()).toBe false
 
