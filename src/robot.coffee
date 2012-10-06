@@ -1,4 +1,4 @@
-class @Robot
+class Robot
   up = 0; right = 90; down = 180; left = 270
 
   map = null
@@ -14,7 +14,7 @@ class @Robot
   setBrain: (brain) -> @brain = brain
 
   checkSetup: ->
-    if @orientation % 90 != 0 then throw new Error 'Orientation should be 0, 90, 180, 270'
+    if @orientation % 90 != 0 or @orientation < 0 then throw new Error 'Orientation should be 0, 90, 180, 270'
     if !@brain then throw Error 'Robot should have a brain: use setBrain()'
     if !@map then throw Error 'Robot should have a map: use setMap()'
 
@@ -39,3 +39,5 @@ class @Robot
 
 # TODO: Visual sensor
 # TODO: Collision sensor
+
+(exports ? this).Robot = Robot

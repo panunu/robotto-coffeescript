@@ -1,4 +1,4 @@
-class @Simulation
+class Simulation
   robot = null
   ratio = 50
 

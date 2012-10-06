@@ -1,4 +1,6 @@
-require '../src/robot.coffee'
+Robot         = require("../src/robot").Robot
+AbstractBrain = require("../src/abstract-brain").AbstractBrain
+# TODO: Improve requirements, e.g. a suite file
 
 describe 'Robot', ->
   robot = null
