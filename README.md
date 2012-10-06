@@ -16,8 +16,8 @@ One is supposed to provide a "brain" for the robot which decides what to do.
 
 Compile coffee's to JS with Node (obs. example with global npm module)
 
-‘‘‘coffee -cw -o js src/*.coffee‘‘‘
+```coffee -cw -o js src/*.coffee```
 
 You can run tests with Jasmine.
 
-‘‘‘jasmine-node --color --autotest --coffee spec‘‘‘
+```jasmine-node --color --autotest --coffee spec```
