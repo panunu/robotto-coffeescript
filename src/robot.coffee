@@ -18,7 +18,7 @@ class Robot
     if !@brain then throw Error 'Robot should have a brain: use setBrain()'
     if !@map then throw Error 'Robot should have a map: use setMap()'
 
-  tick: -> @brain.think() # TODO: Pass what sensors have detected
+  tick: -> @brain.think() # TODO: Pass what sensors have detected to the brain
 
   turnLeft: -> @turn(-90, up, left)
   turnRight: -> @turn(90, left, up)
@@ -26,11 +26,19 @@ class Robot
     @orientation = if @orientation == limit then fallback else @orientation + degrees
 
   goForward: ->
+    original = {y: @y, x: @x}
+
     switch @orientation
       when up then @y--
       when down then @y++
       when left then @x--
       when right then @x++
+
+    if @map.getPresentation()[@y][@x] == 1
+      @y = original.y
+      @x = original.x
+      return false
+    else true
 
   see: ->
     switch @orientation
