@@ -26,8 +26,7 @@ class Robot
     @orientation = if @orientation == limit then fallback else @orientation + degrees
 
   goForward: ->
-    original = {y: @y, x: @x}
-
+    original = [@y, @x]
     switch @orientation
       when up then @y--
       when down then @y++
@@ -35,8 +34,7 @@ class Robot
       when right then @x++
 
     if @map.getPresentation()[@y][@x] == 1 # TODO: Remove magic
-      @y = original.y
-      @x = original.x
+      [@y, @x] = original
       false
     else true
 
