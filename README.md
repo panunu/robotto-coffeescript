@@ -14,7 +14,7 @@ One is supposed to provide a "brain" for the robot which decides what to do.
 
 ## Development
 
-Compile coffee's to JS with Node (obs. example with global npm module)
+Compile coffees to JS with Node (obs. example with global npm module)
 
 ```coffee -cw -o js src/*.coffee```
 
