@@ -12,3 +12,5 @@ class Map
   ] # Figure out a nicer way to present simple coordinates: maybe parse a string to an array like this?
 
   getPresentation: -> presentation
+
+(exports ? this).Map = Map

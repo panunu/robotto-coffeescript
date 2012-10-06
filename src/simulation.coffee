@@ -23,5 +23,4 @@ class Simulation
   refresh: ->
     $('#robot').attr 'style', "top: #{@robot.getY() * ratio}px; left: #{@robot.getX() * ratio}px;"
 
-
-
+(exports ? this).Simulation = Simulation
