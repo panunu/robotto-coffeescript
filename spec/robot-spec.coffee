@@ -1,7 +1,7 @@
 Robot         = require("../src/robot").Robot
 AbstractBrain = require("../src/abstract-brain").AbstractBrain
 Map           = require("../src/map").Map
-# TODO: Improve requirements, e.g. a suite file
+# TODO: Improve requires, e.g. a suite file
 
 describe 'Robot', ->
   robot = null
