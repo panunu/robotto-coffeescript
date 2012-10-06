@@ -25,25 +25,34 @@ class Robot
   turn: (degrees, limit, fallback) ->
     @orientation = if @orientation == limit then fallback else @orientation + degrees
 
-  goForward: ->
-    original = [@y, @x]
+  getNextPosition: ->
+    [x, y] = [@x, @y]
     switch @orientation
-      when up then @y--
-      when down then @y++
-      when left then @x--
-      when right then @x++
+      when up then y = y - 1
+      when down then y = y + 1
+      when left then x = x - 1
+      when right then x = x + 1
 
-    if @map.getPresentation()[@y][@x] == 1 # TODO: Remove magic
-      [@y, @x] = original
-      false
-    else true
+    [x, y]
 
+  goForward: ->
+    [x, y] = @getNextPosition()
+    fail = => false
+
+    try
+      if @map.getPresentation()[y][x] == 1 then fail()
+      else
+        [@x, @y] = [x, y]
+        true
+    catch error # We are probably out of bounds
+      fail()
+
+  # TODO: Separate visual sensor to a component
   see: ->
     switch @orientation
       when down then @map.getPresentation()[@y - 1][@x]
 
 
-# TODO: Visual sensor
 # TODO: Collision sensor
 
 (exports ? this).Robot = Robot

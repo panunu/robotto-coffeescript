@@ -68,3 +68,11 @@ describe 'Robot', ->
     expect(robot.goForward()).toBe false
     expect(robot.x).toBe 0
 
+  it 'should not move forward if goes out of bounds', ->
+    robot = new Robot(0, 0, 0)
+    robot.setMap new Map()
+    robot.map.setPresentation([[0]])
+
+    expect(robot.goForward()).toBe false
+    expect(robot.y).toBe 0
+
