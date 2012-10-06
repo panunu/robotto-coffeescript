@@ -14,6 +14,7 @@ class Simulation
       for column, value of columns
         type = switch value
           when 1 then 'wall'
+          when 5 then 'goal'
           else 'empty'
 
         $('#arena').append("<div class='#{type}' style='top: #{row * ratio}px; left: #{column * ratio}px;'></div>")
