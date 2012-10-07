@@ -1,4 +1,6 @@
 class Map
+  @FREE = 0; @WALL = 1; @GOAL = 5
+
   presentation = [
     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     [0, 0, 0, 1, 1, 1, 1, 0, 0, 5]
